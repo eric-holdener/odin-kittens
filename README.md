@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This application is a part of The Odin Projects learning materials. The goal is to craete a rails app to be a data producing API.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+You can read more about the project and tasks laid out here: https://www.theodinproject.com/lessons/ruby-on-rails-kittens-api
