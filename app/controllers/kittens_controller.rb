@@ -4,10 +4,19 @@ class KittensController < ApplicationController
   # GET /kittens or /kittens.json
   def index
     @kittens = Kitten.all
+    respond_to do |format|
+      format.html
+      format.json { render :json => @kittens }
+    end
   end
 
   # GET /kittens/1 or /kittens/1.json
   def show
+    @kitten = Kitten.find(params[:id])
+    respond_to do |format|
+      format.html
+      format.json { render :json => @kitten }
+    end
   end
 
   # GET /kittens/new
@@ -17,6 +26,7 @@ class KittensController < ApplicationController
 
   # GET /kittens/1/edit
   def edit
+    @kitten = Kitten.find(params[:id])
   end
 
   # POST /kittens or /kittens.json
@@ -28,6 +38,7 @@ class KittensController < ApplicationController
         format.html { redirect_to kitten_url(@kitten), notice: "Kitten was successfully created." }
         format.json { render :show, status: :created, location: @kitten }
       else
+        flash[:notice] = "You have errors in your form"
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @kitten.errors, status: :unprocessable_entity }
       end
